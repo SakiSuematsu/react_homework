@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">グー</li>
+      <li id="cho_btn">チョキ</li>
+      <li id="par_btn">パー</li>
+    </ul>
+    <div id="com_hand">コンピュータの出した手は？</div>
+    <div id="result">結果は？</div>
+  </main>
+
+  <footer>フッター</footer>
+
+  <!-- 🔽 ここで読み込み 🔽 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+
+    //グーの処理
+      $('#gu_btn').on('click', function () {
+        const min = 0;
+        const max = 2;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(randomNumber);
+
+        if (randomNumber === 0) {
+          $('#com_hand').text('ぐー');
+          $('#result').text('あいこ');
+        } else if (randomNumber === 1) {
+          $('#com_hand').text('ちょき');
+          $('#result').text('勝ち');
+        } else {
+          $('#com_hand').text('ぱー');
+          $('#result').text('負け');
+        }
+      }
+      )
+
+      //チョキの処理
+        $('#cho_btn').on('click', function () {
+          const min = 0;
+          const max = 2;
+          const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+          console.log(randomNumber);
+
+          if (randomNumber === 0) {
+            $('#com_hand').text('ちょき');
+            $('#result').text('あいこ');
+          } else if (randomNumber === 1) {
+            $('#com_hand').text('ぱー');
+            $('#result').text('勝ち');
+          } else {
+            $('#com_hand').text('ぐー');
+            $('#result').text('負け');
+          }
+        }
+        )
+
+      //パーの処理
+        $('#par_btn').on('click', function () {
+          const min = 0;
+          const max = 2;
+          const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+          console.log(randomNumber);
+
+          if (randomNumber === 0) {
+            $('#com_hand').text('ぱー');
+            $('#result').text('あいこ');
+          } else if (randomNumber === 1) {
+            $('#com_hand').text('ぐー');
+            $('#result').text('勝ち');
+          } else {
+            $('#com_hand').text('ちょき');
+            $('#result').text('負け');
+          }
+        }
+        )
+  </script>
+
+
+</body>
+
+</html>
